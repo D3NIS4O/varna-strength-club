@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ | Varna Strength Club</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+  :root { --dark: #0d0d0d; --accent: #e8ff47; --gray: #1a1a1a; --text: #ccc; }
+  body { background: var(--dark); color: var(--text); line-height: 1.6; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 6%; background: var(--dark); border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 10; }
+  .logo { font-size: 1.4rem; font-weight: 800; color: #fff; letter-spacing: 2px; }
+  .logo span { color: var(--accent); }
+  nav a { color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; font-size: .95rem; }
+  nav a:hover { color: var(--accent); }
+  header { text-align: center; padding: 80px 8% 40px; }
+  header h1 { color: #fff; font-size: 2.4rem; text-transform: uppercase; letter-spacing: 3px; }
+  header p { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: .85rem; margin-top: 8px; }
+  .faq-list { max-width: 800px; margin: 0 auto; padding: 30px 6% 90px; }
+  .faq-item { background: var(--gray); border: 1px solid #2a2a2a; border-radius: 8px; margin-bottom: 14px; overflow: hidden; }
+  .faq-q { width: 100%; text-align: left; background: none; border: none; color: #fff; font-size: 1.05rem; font-weight: 600;
+           padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  .faq-q span { color: var(--accent); font-size: 1.4rem; transition: transform .3s; }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; padding: 0 24px; }
+  .faq-item.open .faq-a { max-height: 300px; padding: 0 24px 22px; }
+  .faq-item.open .faq-q span { transform: rotate(45deg); }
+  footer { padding: 25px; text-align: center; font-size: .85rem; color: #666; border-top: 1px solid #222; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">VARNA <span>STRENGTH</span> CLUB</div>
+  <a href="index.html">← Back to Home</a>
+</nav>
+
+<header>
+  <h1>Frequently Asked Questions</h1>
+  <p>Everything you need to know</p>
+</header>
+
+<div class="faq-list">
+  <div class="faq-item"><button class="faq-q">Do I need experience to join? <span>+</span></button>
+    <div class="faq-a"><p>Not at all. Around 40% of our members are complete beginners. Every membership includes a free fitness assessment where a coach builds your starter program.</p></div></div>
+  <div class="faq-item"><button class="faq-q">Is there really a free trial workout? <span>+</span></button>
+    <div class="faq-a"><p>Yes! Your first session is completely free — full gym access plus one group class. Just message us through the contact form or drop by during staffed hours (07:00–22:00).</p></div></div>
+  <div class="faq-item"><button class="faq-q">Can I freeze my membership? <span>+</span></button>
+    <div class="faq-a"><p>Annual members can freeze up to 30 days per year. Monthly members can pause for up to 7 days. Just let us know 48 hours in advance.</p></div></div>
+  <div class="faq-item"><button class="faq-q">How does 24/7 access work? <span>+</span></button>
+    <div class="faq-a"><p>Members receive a personal key card that opens the main door around the clock. The facility is monitored by cameras outside staffed hours for your safety.</p></div></div>
+  <div class="faq-item"><button class="faq-q">Do you offer personal training? <span>+</span></button>
+    <div class="faq-a"><p>Yes — 1-on-1 sessions start at 50 лв./hour with any of our four coaches. Annual members get 2 free PT sessions included.</p></div></div>
+  <div class="faq-item"><button class="faq-q">What's the minimum age? <span>+</span></button>
+    <div class="faq-a"><p>16+ for independent training. Members aged 14–16 can train with a parent present or with a personal trainer.</p></div></div>
+  <div class="faq-item"><button class="faq-q">Is parking available? <span>+</span></button>
+    <div class="faq-a"><p>Yes, we have a free private parking lot with 25 spaces directly in front of the entrance.</p></div></div>
+</div>
+
+<footer>© 2026 Varna Strength Club. All rights reserved.</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      document.querySelectorAll('.faq-item').forEach(i => { if (i !== item) i.classList.remove('open'); });
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
