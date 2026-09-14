@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Varna Strength Club | Premium Gym in Varna, Bulgaria</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+  :root { --dark: #0d0d0d; --accent: #e8ff47; --gray: #1a1a1a; --text: #ccc; }
+  body { background: var(--dark); color: var(--text); line-height: 1.6; }
+
+  /* Navbar */
+  nav { position: fixed; width: 100%; top: 0; z-index: 100; background: rgba(13,13,13,.95);
+        display: flex; justify-content: space-between; align-items: center; padding: 18px 6%; border-bottom: 1px solid #222; }
+  .logo { font-size: 1.4rem; font-weight: 800; color: #fff; letter-spacing: 2px; }
+  .logo span { color: var(--accent); }
+  nav ul { display: flex; gap: 32px; list-style: none; }
+  nav a { color: #fff; text-decoration: none; font-size: .95rem; text-transform: uppercase; letter-spacing: 1px; transition: color .3s; }
+  nav a:hover { color: var(--accent); }
+
+  /* Hero */
+  .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+          background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.85)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600') center/cover; }
+  .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); color: #fff; text-transform: uppercase; letter-spacing: 4px; }
+  .hero h1 span { color: var(--accent); }
+  .hero p { margin: 20px 0 30px; font-size: 1.2rem; max-width: 600px; }
+  .btn { display: inline-block; padding: 14px 40px; background: var(--accent); color: #000; font-weight: 700;
+         text-transform: uppercase; letter-spacing: 2px; text-decoration: none; border-radius: 3px; transition: transform .2s, box-shadow .2s; }
+  .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(232,255,71,.35); }
+
+  section { padding: 90px 6%; }
+  .section-title { text-align: center; margin-bottom: 60px; }
+  .section-title h2 { color: #fff; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 3px; }
+  .section-title p { color: var(--accent); letter-spacing: 2px; text-transform: uppercase; font-size: .85rem; margin-top: 8px; }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+  .about-card { background: var(--gray); padding: 36px; border-radius: 8px; border-top: 3px solid var(--accent); transition: transform .3s; }
+  .about-card:hover { transform: translateY(-6px); }
+  .about-card h3 { color: #fff; margin: 14px 0 10px; }
+  .about-card .icon { font-size: 2rem; }
+
+  /* Pricing */
+  #pricing { background: var(--gray); }
+  .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: auto; }
+  .price-card { background: var(--dark); border-radius: 10px; padding: 40px 30px; text-align: center; border: 1px solid #2a2a2a; transition: transform .3s; }
+  .price-card:hover { transform: translateY(-8px); }
+  .price-card.featured { border: 2px solid var(--accent); position: relative; }
+  .badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000;
+           padding: 4px 18px; border-radius: 20px; font-size: .75rem; font-weight: 700; text-transform: uppercase; }
+  .price-card h3 { color: #fff; text-transform: uppercase; letter-spacing: 2px; }
+  .price { font-size: 2.8rem; color: var(--accent); font-weight: 800; margin: 18px 0; }
+  .price small { font-size: 1rem; color: #888; font-weight: 400; }
+  .price-card ul { list-style: none; margin: 20px 0 30px; }
+  .price-card li { padding: 8px 0; border-bottom: 1px solid #222; font-size: .95rem; }
+
+  /* Schedule */
+  table { width: 100%; max-width: 900px; margin: auto; border-collapse: collapse; }
+  th, td { padding: 14px; text-align: center; border-bottom: 1px solid #2a2a2a; }
+  th { color: var(--accent); text-transform: uppercase; letter-spacing: 1px; font-size: .85rem; }
+  td:first-child { color: #fff; font-weight: 600; }
+
+  /* Contact */
+  #contact { background: var(--gray); text-align: center; }
+  .contact-info { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 40px; }
+  .contact-info div h4 { color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .contact-info div p { color: #fff; }
+
+  footer { padding: 25px; text-align: center; font-size: .85rem; color: #666; border-top: 1px solid #222; }
+
+  @media (max-width: 768px) { nav ul { display: none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">VARNA <span>STRENGTH</span> CLUB</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#pricing">Membership</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <h1>Forge Your <span>Strongest</span> Self</h1>
+  <p>Varna's premier fitness destination — 2,000 m² of state-of-the-art equipment, expert coaches, and a community that pushes you further.</p>
+  <a href="#pricing" class="btn">Join Now</a>
+</header>
+
+<section id="about">
+  <div class="section-title">
+    <h2>Why Choose Us</h2>
+    <p>More than just a gym</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-card"><div class="icon">🏋️</div><h3>Modern Equipment</h3><p>Brand-new Technogym and Rogue machines, free weights up to 60 kg, and a dedicated functional training zone.</p></div>
+    <div class="about-card"><div class="icon">👥</div><h3>Expert Trainers</h3><p>Certified coaches with 10+ years of experience in strength, conditioning, and rehabilitation.</p></div>
+    <div class="about-card"><div class="icon">🧖</div><h3>Recovery Zone</h3><p>Sauna, ice bath, and stretching area to help you recover faster and train harder.</p></div>
+    <div class="about-card"><div class="icon">🕕</div><h3>Open 24/7</h3><p>Train on your schedule. Members get round-the-clock access, every day of the year.</p></div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="section-title">
+    <h2>Membership Plans</h2>
+    <p>No hidden fees — cancel anytime</p>
+  </div>
+  <div class="price-grid">
+    <div class="price-card">
+      <h3>Day Pass</h3>
+      <div class="price">15 лв.<small> /day</small></div>
+      <ul><li>Full gym access</li><li>Locker room & showers</li><li>1 group class</li></ul>
+      <a href="#contact" class="btn">Get Started</a>
+    </div>
+    <div class="price-card featured">
+      <div class="badge">Most Popular</div>
+      <h3>Monthly</h3>
+      <div class="price">79 лв.<small> /month</small></div>
+      <ul><li>Unlimited 24/7 access</li><li>All group classes</li><li>Sauna & recovery zone</li><li>Free fitness assessment</li></ul>
+      <a href="#contact" class="btn">Get Started</a>
+    </div>
+    <div class="price-card">
+      <h3>Annual</h3>
+      <div class="price">690 лв.<small> /year</small></div>
+      <ul><li>Everything in Monthly</li><li>2 free PT sessions</li><li>Guest passes (4/year)</li><li>Freeze up to 30 days</li></ul>
+      <a href="#contact" class="btn">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<section id="schedule">
+  <div class="section-title">
+    <h2>Group Classes</h2>
+    <p>Included in every membership</p>
+  </div>
+  <table>
+    <tr><th>Class</th><th>Days</th><th>Time</th><th>Coach</th></tr>
+    <tr><td>CrossFit</td><td>Mon / Wed / Fri</td><td>18:00 – 19:00</td><td>Viktor Petrov</td></tr>
+    <tr><td>HIIT Burn</td><td>Tue / Thu</td><td>07:30 – 08:15</td><td>Maria Georgieva</td></tr>
+    <tr><td>Yoga & Mobility</td><td>Wed / Sat</td><td>10:00 – 11:00</td><td>Elena Dimitrova</td></tr>
+    <tr><td>Boxing Fundamentals</td><td>Mon / Thu</td><td>19:30 – 20:30</td><td>Ivaylo Stoyanov</td></tr>
+    <tr><td>Spin Class</td><td>Tue / Fri / Sun</td><td>17:00 – 17:45</td><td>Maria Georgieva</td></tr>
+  </table>
+</section>
+
+<section id="contact">
+  <div class="section-title">
+    <h2>Visit Us</h2>
+    <p>First workout is free — come say hi</p>
+  </div>
+  <div class="contact-info">
+    <div><h4>📍 Address</h4><p>bul. Knyaz Boris I 84, Varna 9000</p></div>
+    <div><h4>📞 Phone</h4><p>+359 52 600 123</p></div>
+    <div><h4>✉️ Email</h4><p>hello@varnastrength.bg</p></div>
+    <div><h4>🕕 Hours</h4><p>Open 24/7 for members<br>Staffed: 07:00 – 22:00</p></div>
+  </div>
+</section>
+
+<footer>© 2026 Varna Strength Club. All rights reserved.</footer>
+
+</body>
+</html>
