@@ -162,13 +162,14 @@
       <div><h4>✉️ Email</h4><p>hello@varnastrength.bg</p></div>
       <div><h4>🕕 Hours</h4><p>Open 24/7 for members<br>Staffed: 07:00 – 22:00</p></div>
     </div>
-    <form id="contactForm">
+    <form id="contactForm" action="https://formspree.io/f/mzebnara" method="POST">
+      <input type="hidden" name="site" value="Varna Strength Club — Contact Form">
       <label for="name">Name</label>
-      <input id="name" type="text" required placeholder="Your name">
+      <input id="name" name="name" type="text" required placeholder="Your name">
       <label for="email">Email</label>
-      <input id="email" type="email" required placeholder="you@example.com">
+      <input id="email" name="email" type="email" required placeholder="you@example.com">
       <label for="message">Message</label>
-      <textarea id="message" required placeholder="I want to claim my free workout..."></textarea>
+      <textarea id="message" name="message" required placeholder="I want to claim my free workout..."></textarea>
       <button type="submit" class="btn">Send Message</button>
       <p class="form-msg" id="formMsg">✅ Thanks! We'll get back to you within 24 hours.</p>
     </form>
@@ -178,10 +179,15 @@
 <footer>© 2026 Varna Strength Club. All rights reserved.</footer>
 
 <script>
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    document.getElementById('formMsg').style.display = 'block';
-    this.reset();
+    const form = this, msg = document.getElementById('formMsg');
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+      msg.textContent = res.ok ? "✅ Thanks! We'll get back to you within 24 hours." : "⚠️ Something went wrong — please try again or call us.";
+      if (res.ok) form.reset();
+    } catch { msg.textContent = "⚠️ Network error — please try again."; }
+    msg.style.display = 'block';
   });
 </script>
 
